@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "592ed864-248a-468e-b490-6cedc06fe46a",
+		"name": "Tienda Maquillaje",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38351677"
+	},
+	"item": [
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"11241e30-2832-44e4-9432-d05f9411ac9c\",\r\n    \"name\":\"Labiales Arabes\",\r\n    \"stock\":60,\r\n    \"price\":6700,\r\n    \"state\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/products/update"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/products/delete/36326cbf-e999-470d-a02a-a7f42cee4fcc"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Uñas Falsas\",\r\n    \"stock\":20,\r\n    \"price\":40000,\r\n    \"state\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/products/new"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/products"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultarpor ID's",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/products/b27ce2a6-fa7c-40e8-99a2-6abab71a7f4d"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"63a827dd-cee9-46e5-90ce-786bcc58ceb4\",\r\n    \"names\":\"Pepe\",\r\n    \"lastNames\":\"El grillo\",\r\n    \"address\":\"Al lado de mi casa\",\r\n    \"phone\":1234567,\r\n    \"state\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/clientes/update"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shop\":\"Maquillaje\",\r\n    \"product\":\"68944ae1-164a-4883-9f08-f0e200ce2d82\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/clientes/delete/f9dc1881-9706-4e12-aa8e-5ffefff17da4"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"names\":\"Tommy\",\r\n    \"lastNames\":\"Y Jerry\",\r\n    \"address\":\"Calle 1234 -123\",\r\n    \"phone\":1234567,\r\n    \"state\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/clientes/new"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultarpor ID's",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"shop\":2,\r\n    \"product\": \"89bbd493-ad4b-4867-984c-bcabf89ff844\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/clientes/6181b715-13d5-43fd-8eef-a6629b63126c"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proveedores",
+			"item": [
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"4f65f45b-efe7-47f8-88ec-d5f7276529ba\",\r\n    \"name\":\"LaPeña\",\r\n    \"address\":\"Cerca de mi casa\",\r\n    \"email\":\"alldo@mail\",\r\n    \"phone\":1234567,\r\n    \"state\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/proveedor/update"
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:8080/proveedor/delete/4f65f45b-efe7-47f8-88ec-d5f7276529ba"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"LaPeña\",\r\n    \"address\":\"Cerca de mi casa\",\r\n    \"email\":\"alldo@mail\",\r\n    \"phone\":1234567,\r\n    \"state\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8080/proveedor/new"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/proveedor"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultarpor ID's",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:8080/proveedor/4f65f45b-efe7-47f8-88ec-d5f7276529ba"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

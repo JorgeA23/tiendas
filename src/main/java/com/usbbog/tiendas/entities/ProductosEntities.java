@@ -12,10 +12,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class TiendasEntities {
+public class ProductosEntities {
 	
 	private UUID id;
-	private String tienda;
 	private String productName;
 	private Integer productStock;
 	private Float productPrice;
@@ -26,12 +25,6 @@ public class TiendasEntities {
 	}
 	public void setId(UUID id) {
 		this.id = id;
-	}
-	public String getTienda() {
-		return tienda;
-	}
-	public void setTienda(String tienda) {
-		this.tienda = tienda;
 	}
 	public String getProductName() {
 		return productName;
@@ -58,11 +51,10 @@ public class TiendasEntities {
 		this.productState = productState;
 	}
 	
-	public TiendasEntities(UUID id, String tienda, String productName, Integer productStock, Float productPrice,
+	public ProductosEntities(UUID id, String productName, Integer productStock, Float productPrice,
 			Boolean productState) {
 		super();
 		this.id = id;
-		this.tienda = tienda;
 		this.productName = productName;
 		this.productStock = productStock;
 		this.productPrice = productPrice;

@@ -3,6 +3,7 @@ package com.usbbog.tiendas.controller;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,43 +15,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.usbbog.tiendas.entities.TiendasEntities;
-import com.usbbog.tiendas.services.TiendasServices;
+import com.usbbog.tiendas.entities.ClientesEntities;
+import com.usbbog.tiendas.services.ClientesService;
 
 @RestController
-@RequestMapping("/tiendas")
-public class TiendasControllers {
+@RequestMapping("/clientes")
+public class ClientesController {
 	
-	private final TiendasServices tiendasServices;
+	private final ClientesService clientesService;
 	
 	@Autowired
-	public TiendasControllers(TiendasServices tiendasServices) {
-		this.tiendasServices = tiendasServices;
+	public ClientesController(ClientesService clientesService) {
+		this.clientesService = clientesService;
+	}
+	
+	@GetMapping()
+	public List<ClientesEntities> getAllProducts(){
+		return clientesService.getAll();
 	}
 	
 	@GetMapping("/{id}")
-	public List<TiendasEntities> getAllProducts(@PathVariable Integer id){
-		return tiendasServices.getAllByShop(id);
-	}
-	
-	@GetMapping("/ides")
-	public Optional<TiendasEntities> getProductById(@RequestBody Map<String, Object> data){
-		return tiendasServices.getProductById(data);
+	public Optional<ClientesEntities> getProductById(@PathVariable UUID id){
+		return clientesService.getClientById(id);
 	}
 	
 	@PostMapping("/new")
 	public String createProducts(@RequestBody Map<String, Object> data){
-		return tiendasServices.createProduct(data);
+		return clientesService.createClient(data);
 	}
 	
 	@PutMapping("/update")
 	public String updateProduct(@RequestBody Map<String, Object> newItems){
-		return tiendasServices.updateProduct(newItems);
+		return clientesService.updateClient(newItems);
 	}
 	
-	@DeleteMapping("/delete")
-	public String deleteProduct(@RequestBody Map<String, Object> todelete){
-		return tiendasServices.deleteProduct(todelete);
+	@DeleteMapping("/delete/{id}")
+	public String deleteProduct(@PathVariable UUID id){
+		return clientesService.deleteClient(id);
 	}
 
 }
